@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+{% if flag == 0 %}
+    <h1>Το ακόλουθο αρχείο θα διαγραφεί μόνιμα:</h1>
+    <li style="font-weight: bold;">Κωδικός: {{ record.id }}</li>
+    <li>Έχει υπογραφεί από: {{ record.signed_by | replace('[', '') | replace(']', '') | replace("'", '') }}</li>
+    <li>Προς υπογραφή από: {{ record.tbs }}</li>
+    <li>Ημερομηνία Δημιουργίας: {{ record.date_created }}</li>
+    <li>Ημερομηνία Τελευταίας Υπογραφής: {{ record.date_signed }}</li>
+    <h1>Είστε σίγουροι πως θέλετε να συνεχίσετε;</h1>
+    <form action="/delete_confirmed" method="post">
+        <input type="hidden" name="record_id" value="{{ record.id }}">
+        <button type="submit">Ναι</button>
+    </form>
+    <form action="/" method="post">
+        <button type="submit">Ακύρωση</button>
+    </form>
+{% else %}
+    <h3>Το έγγραφο με κωδικό {{ id }} δεν υπάρχει</h3>
+    <a href="/">Επιστροφή στην αρχική</a>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% if flag == 0 %}
+        <h3>Η ενημέρωση του αρχείου με κωδικό {{ record.id }} καταχωρήθηκε επιτυχώς!</h3>
+    {% elif flag == 1 %}
+        <h3>Δεν υπάρχει αρχείο με κωδικό {{ id }}</h3>
+    {% endif %}
+    <a href="/">Επιστροφή στην αρχική</a>
+</body>
+</html>

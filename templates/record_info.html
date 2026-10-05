@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πληροφορίες Εγγράφου</title>
+</head>
+<body>
+    {% if flag == 0 %}
+        <ul>
+            <li style="font-weight: bold;">Κωδικός: {{ record.id }}</li>
+            <li>Έχει υπογραφεί από: {{ record.signed_by }}</li>
+            <li>Προς υπογραφή από: {{ record.tbs }}</li>
+            <li>Ημερομηνία Δημιουργίας: {{ record.date_created }}</li>
+            <li>Ημερομηνία Τελευταίας Υπογραφής: {{ record.date_signed }}</li>
+        </ul>
+    {% elif flag == 1 %}
+         <h3>Δεν υπάρχει έγγραφο με κωδικό {{ id }}</h3>
+    {% endif %}
+    <a href="/">Επιστροφή στην αρχική</a>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Υπογραφές</title>
+    <style>
+        .pointer_button{
+            cursor:pointer;
+        }
+        .myButton {
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: aquamarine;
+            color: black;
+            transition: background-color 0.5s;
+        }
+
+        .myButton:hover {
+            background-color: #4ab3ac;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="passwordPrompt">
+        <h2>Παρακαλώ εισάγετε κωδικό</h2>
+        <input type="password" id="passwordInput" placeholder="Password">
+        <button onclick="checkPassword()" class="pointer_button">Submit</button>
+        <p id="errorMessage" style="color: red;"></p>
+    </div>
+    <div id="webAppContent" style="display: none;">
+    <div style = "text-align: center; text-decoration: underline">
+        <h1>ΥΠΟΓΡΑΦΕΣ</h1>
+    </div>
+    <h2>-- ΔΗΜΙΟΥΡΓΙΑ ΕΓΓΡΑΦΟΥ</h2>
+    <form action="/create_record" method="post">
+        <label for="input_id">Εισάγετε κωδικό εγγράφου: </label>
+        <br>
+        <input type="text" id="input_id" name="input_id">
+        <br><br>
+        <label for="signed">Εισάγετε όνομα υπογράφοντος/ουσας: </label>
+        <br>
+        <input type="text" id="signed" name="signed">
+        <br><br>
+        <label for="next">Εισάγετε εργαζόμενο/η όπου θα σταλθεί το έγγραφο: </label>
+        <br>
+        <input type="text" id="next" name="next">
+        <br><br>
+        <label for="date_signed">Εισάγετε ημερομηνία υπογραφής: </label>
+        <br>
+        <input type="date" id="date_signed" name="date_signed">
+        <br><br>
+        <button type="submit" class="pointer_button">OK</button>
+        <br>
+    </form>
+    <br><br><br>
+    <h2>-- ΑΝΑΖΗΤΗΣΗ ΕΓΓΡΑΦΟΥ</h2>
+    <form action="/record_info" method="post">
+        <label for="input_id">Εισάγετε κωδικό εγγράφου: </label>
+        <input type="text" id="input_id" name="input_id">
+        <button type="submit " class="pointer_button">OK</button>
+    </form>
+    <br><br><br>
+    <h2>-- ΕΝΗΜΕΡΩΣΗ ΕΓΓΡΑΦΟΥ</h2>
+    <form action="/update_record" method="post">
+        <label for="input_id">Εισάγετε κωδικό εγγράφου: </label>
+        <br>
+        <input type="text" id="input_id" name="input_id">
+        <br><br>
+        <label for="signed">Εισάγετε όνομα υπογράφοντος/ουσας: </label>
+        <br>
+        <input type="text" id="signed" name="signed">
+        <br><br>
+        <label for="next">Εισάγετε εργαζόμενο/η όπου θα σταλθεί το έγγραφο: </label>
+        <br>
+        <input type="text" id="next" name="next">
+        <br><br>
+        <label for="date_signed">Εισάγετε ημερομηνία υπογραφής: </label>
+        <br>
+        <input type="date" id="date_signed" name="date_signed">
+        <button type="submit" class="pointer_button">OK</button>
+        <br>
+    </form>
+    <br><br><br>
+    <h2>-- ΟΛΟΚΛΗΡΩΣΗ ΕΓΓΡΑΦΟΥ</h2>
+    <form action="/delete" method="post">
+        <label for="input_id">Εισάγετε κωδικό εγγράφου: </label>
+        <input type="text" id="input_id" name="input_id">
+        <button type="submit" class="pointer_button">OK</button>
+    </form>
+    <br><br><br>
+    <form action="../all_records" method="post">
+        <button type="submit" class="myButton">ΟΛΑ ΤΑ ΕΓΓΡΑΦΑ</button>
+    </form>
+    </div>
+
+    <script src="../static/index.js"></script>
+</body>
+</html>

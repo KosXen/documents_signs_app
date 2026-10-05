@@ -1,0 +1,10 @@
+virtenv/
+__pycache__/
+build/
+dist/
+.idea/
+instance/
+*.pyc
+*.db
+*.sqlite
+.env

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% if flag == 1 %}
+        <h3>Δημιουργήθηκε έγγραφο με κωδικό {{ id }}</h3>
+    {% elif flag == 0 %}
+        <h3>Υπάρχει ήδη έγγραφο με κωδικό {{ id }}</h3>
+    {% else %}
+        <h3>Error. Δοκιμάστε ξανά</h3>
+    {% endif %}
+    <a href="/">Επιστροφή στην αρχική</a>
+</body>
+</html>
